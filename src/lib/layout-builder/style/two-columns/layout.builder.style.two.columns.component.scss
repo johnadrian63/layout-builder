@@ -1,0 +1,20 @@
+* {
+    scrollbar-width: thin;
+    scroll-margin: 50px;
+    scrollbar-color: theme("colors.gray.400") #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.400");
+    border-radius: 6px;
+    border: 2px solid theme("colors.gray.400");
+}

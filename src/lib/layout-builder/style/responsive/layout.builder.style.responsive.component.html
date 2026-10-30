@@ -1,0 +1,115 @@
+<div class="h-full">
+    <nav class="border flex justify-between p-1.5 bg-white">
+        <div class="flex items-center">
+            @if (loggedin) {
+                <div
+                    class="lg:hidden md:hidden mx-1"
+                    [matMenuTriggerFor]="menu1"
+                >
+                    <span
+                        class="fa-solid fa-bars text-xl cursor-pointer text-gray-600"
+                    ></span>
+                </div>
+                <mat-menu #menu1="matMenu">
+                    <a class="px-3" mat-menu-item
+                        ><span
+                            class="fa-solid fa-certificate text-sm mr-2"
+                        ></span
+                        >Badges</a
+                    >
+                    <a class="px-3" mat-menu-item
+                        ><span
+                            class="fa-solid fa-user-group text-sm mr-2"
+                        ></span
+                        >Following</a
+                    >
+                </mat-menu>
+            }
+
+            <div class="logo-initial md:logo sm:logo lg:logo"></div>
+        </div>
+
+        <div class="w-8/12 sm:w-8/12 md:w-3/12 items-center mx-2">
+            <form>
+                <div class="flex">
+                    <input
+                        type="text"
+                        class="w-full py-2 px-3 rounded-l-lg border border-gray-200 border-r-0 focus:outline-none bg-gray-100"
+                    />
+                    <button
+                        class="p-1.5 pr-2.5 rounded-r-lg border border-l-0 border-gray-200 bg-slate-100 text-gray-400"
+                    >
+                        <span class="fa-solid fa-magnifying-glass"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="flex items-center">
+            @if (toggleNavigate) {
+                <ul
+                    class="text-lg font-normal sm:block lg:hidden md:hidden absolute left-0 w-full mobile-navigate"
+                >
+                    <li
+                        class="py-1 px-3 cursor-pointer hover:bg-gray-100 flex items-center text-gray-700"
+                    >
+                        <span
+                            class="fa-solid fa-certificate text-sm mr-2"
+                        ></span>
+                        Badges
+                    </li>
+                    <li
+                        class="py-1 px-3 cursor-pointer hover:bg-gray-100 flex items-center text-gray-700"
+                    >
+                        <span
+                            class="fa-solid fa-user-group text-sm mr-2"
+                        ></span>
+                        Following
+                    </li>
+                </ul>
+            }
+            <ul class="flex items-center text-lg font-normal">
+                @if (!loggedin) {
+                    <li
+                        class="mx-1 py-1 px-2.5 border border-gray-200 hover:bg-slate-100 rounded-sm cursor-pointer"
+                    >
+                        Browse
+                    </li>
+                    <li
+                        class="mx-1 py-1 px-2.5 bg-teal-400 hover:bg-teal-500 text-white rounded-sm cursor-pointer"
+                    >
+                        Login
+                    </li>
+                }
+                @if (loggedin) {
+                    <li
+                        class="mx-1 hover:bg-slate-100 py-1 px-2.5 rounded-sm cursor-pointer lg:!border md:!border sm:border-0"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        <span
+                            class="ml-1.5 hidden md:inline-block lg:inline-block"
+                            >Badge</span
+                        >
+                    </li>
+                }
+            </ul>
+            @if (loggedin) {
+                <!-- <app-thumbnail-component class="cursor-pointer ml-2" size="EXTRA_SMALL" [imageUrl]="
+                  'https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.30497-1/84628273_176159830277856_972693363922829312_n.jpg?stp=c71.0.240.240a_dst-jpg_p240x240&_nc_cat=1&ccb=1-7&_nc_sid=12b3be&_nc_ohc=Vc1vO4yibOoAX-fpMI5&_nc_ht=scontent.fmnl4-1.fna&edm=AP4hL3IEAAAA&oh=00_AfCoVWECB4GtGioRniZlRlkwEzjgn0LC-jp8FQp3TazANQ&oe=652FDAD9'
+               " [initial]="'J'" [matMenuTriggerFor]="menu"></app-thumbnail-component> -->
+                <mat-menu #menu="matMenu">
+                    <a routerLink="/" mat-menu-item
+                        ><i class="fa-regular fa-user"></i> Profile</a
+                    >
+                    <a routerLink="/settings/profile" mat-menu-item
+                        ><i class="fa-solid fa-gear"></i> Settings</a
+                    >
+                    <a mat-menu-item
+                        ><i class="fa-solid fa-right-from-bracket"></i>
+                        Logout</a
+                    >
+                </mat-menu>
+            }
+        </div>
+    </nav>
+</div>

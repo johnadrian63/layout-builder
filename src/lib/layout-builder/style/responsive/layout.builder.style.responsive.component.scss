@@ -1,0 +1,27 @@
+@tailwind base;
+
+@layer base {
+    .logo {
+        background-image: url(../../../../../projects/webapp/src/assets/logo.png);
+        height: 40px;
+        width: 108px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .logo-initial {
+        background-image: url(../../../../../projects/webapp/src/assets/logo-initial.png);
+        height: 40px;
+        width: 38px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.mobile-navigate {
+    top: 54px;
+
+    li {
+        border-bottom: solid 1px theme("colors.gray.200");
+    }
+}

@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+* {
+    scrollbar-width: thin;
+    scroll-margin: 50px;
+    scrollbar-color: theme("colors.gray.400") #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.400");
+    border-radius: 6px;
+    border: 2px solid theme("colors.gray.400");
+}
+
+.sidebar {
+    @apply absolute left-0 w-60 shadow-lg md:relative lg:relative md:w-60 lg:w-60 bg-white z-30 flex border h-[calc(100vh-55px)] overflow-y-hidden hover:overflow-y-auto;
+}

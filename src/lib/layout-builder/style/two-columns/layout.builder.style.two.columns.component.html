@@ -1,0 +1,23 @@
+@if (isMobileViewport && sidebarExpanded) {
+    <lib-ui-backdrop></lib-ui-backdrop>
+}
+
+<div class="w-full h-full flex flex-col">
+    <div class="flex h-full">
+        <div
+            class="fixed left-0 w-60 shadow-lg md:relative lg:relative md:w-60 lg:60 bg-white z-30 flex"
+        >
+            <router-outlet name="sidebar"></router-outlet>
+        </div>
+        <div class="flex-1 flex flex-col relative height">
+            <div>
+                <router-outlet name="header"></router-outlet>
+            </div>
+            <div
+                class="flex-1 border border-red-300 h-[calc(100vh-57px)] overflow-y-auto"
+            >
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
